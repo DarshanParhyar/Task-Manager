@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Update Task Status</title>
+        <style>
+            body {
+                font-family: Arial, sans-serif;
+                background-color: #f9f9f9;
+                margin: 0;
+                padding: 0;
+            }
+
+            h2 {
+                text-align: center;
+                margin-top: 30px;
+                color: #333;
+            }
+
+            form {
+                max-width: 400px;
+                margin: 0 auto;
+                padding: 20px;
+                background-color: #fff;
+                border-radius: 5px;
+                box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            }
+
+            label {
+                font-weight: bold;
+                margin-top: 10px;
+                display: block;
+            }
+
+            input[type="text"] {
+                width: 100%;
+                padding: 10px;
+                margin-top: 5px;
+                margin-bottom: 10px;
+                border: 1px solid #ccc;
+                border-radius: 5px;
+                box-sizing: border-box;
+            }
+
+            input[type="submit"] {
+                width: 100%;
+                padding: 10px;
+                background-color: #007bff;
+                color: #fff;
+                border: none;
+                border-radius: 5px;
+                cursor: pointer;
+            }
+
+            input[type="submit"]:hover {
+                background-color: #0056b3;
+            }
+
+            /* Task links */
+            .task-links {
+                text-align: center;
+                margin-top: 20px;
+            }
+
+            .task-links a {
+                display: inline-block;
+                padding: 10px 20px;
+                background-color: #4CAF50;
+                color: #fff;
+                text-decoration: none;
+                border-radius: 5px;
+                margin: 0 10px;
+            }
+
+            .task-links a:hover {
+                background-color: #45a049;
+            }
+        </style>
+    </head>
+    <body>
+        <h2>Update Task Status</h2>
+        <form action="UpdateTaskServlet" method="post">
+            <label for="taskId">Task ID:</label><br>
+            <input type="text" id="taskId" name="taskId" required><br><br>
+            <input type="submit" value="Mark as Completed">
+        </form>
+
+        <!-- Task links -->
+        <div class="task-links">
+            <a href="add.html">Add Task</a>
+            <a href="read.html">View Tasks</a>
+            <a href="update.html">Update Task Status</a>
+            <a href="delete.html">Delete Task</a>
+        </div>
+    </body>
+</html>

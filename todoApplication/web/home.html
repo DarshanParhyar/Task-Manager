@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Home</title>
+    </head>
+    <body>
+
+        <h1>Welcome to Your To-Do List</h1>
+
+        <div id="welcomeMessage">
+
+        </div>
+
+        <script>
+
+            function getLoggedInUser() {
+                var cookies = document.cookie.split(';');
+                var username = '';
+                cookies.forEach(function (cookie) {
+                    var cookiePair = cookie.split('=');
+                    if (cookiePair[0].trim() === 'loggedInUser') {
+                        username = cookiePair[1];
+                    }
+                });
+                return username;
+            }
+
+
+            function displayWelcomeMessage() {
+                var loggedInUser = getLoggedInUser();
+                var welcomeMessageDiv = document.getElementById('welcomeMessage');
+                if (loggedInUser) {
+                    welcomeMessageDiv.innerHTML = '<p>Welcome, ' + loggedInUser + '!</p>';
+                } else {
+
+                    window.location.href = 'login.html';
+                }
+            }
+
+
+            window.onload = function () {
+                displayWelcomeMessage();
+            };
+        </script>
+
+
+
+    </body>
+</html>

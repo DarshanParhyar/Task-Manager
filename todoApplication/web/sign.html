@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>ToDo App</title>
+        <style>
+
+
+            /* Form Styles */
+            .form-container {
+                max-width: 400px;
+                margin: 0 auto;
+                background-color: #fff;
+                border-radius: 10px;
+                padding: 20px;
+                box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            }
+
+            .form-container h2 {
+                margin-bottom: 20px;
+                color: #333;
+            }
+
+            .form-container label {
+                display: block;
+                margin-bottom: 10px;
+                color: #333;
+            }
+
+            .form-container input[type="text"],
+            .form-container input[type="email"],
+            .form-container input[type="password"] {
+                width: 100%;
+                padding: 10px;
+                margin-bottom: 20px;
+                border: 1px solid #ccc;
+                border-radius: 5px;
+            }
+
+            .form-container input[type="submit"] {
+                background-color: #007bff;
+                color: #fff;
+                border: none;
+                border-radius: 5px;
+                padding: 10px 20px;
+                cursor: pointer;
+            }
+
+            .form-container input[type="submit"]:hover {
+                background-color: #0056b3;
+            }
+
+            .form-container .form-link {
+                text-align: center;
+                margin-top: 20px;
+            }
+        </style>
+    </head>
+    <body>
+
+
+        <!-- Sign-in Form -->
+        <div class="form-container" id="signin-form">
+            <h2>Sign In</h2>
+            <form action="#" method="post">
+                <label for="signin-email">Email:</label>
+                <input type="email" id="signin-email" name="signin-email" required>
+                <label for="signin-password">Password:</label>
+                <input type="password" id="signin-password" name="signin-password" required>
+                <input type="submit" value="Sign In">
+                <p class="form-link">Don't have an account? <a href="#" onclick="toggleForm('signup-form')">Sign Up</a></p>
+            </form>
+        </div>
+
+
+        <div class="form-container" id="signup-form" style="display: none;">
+            <h2>Sign Up</h2>
+            <form action="#" method="post">
+                <label for="signup-name">Name:</label>
+                <input type="text" id="signup-name" name="signup-name" required>
+                <label for="signup-email">Email:</label>
+                <input type="email" id="signup-email" name="signup-email" required>
+                <label for="signup-password">Password:</label>
+                <input type="password" id="signup-password" name="signup-password" required>
+                <input type="submit" value="Sign Up">
+                <p class="form-link">Already have an account? <a href="#" onclick="toggleForm('signin-form')">Sign In</a></p>
+            </form>
+        </div>
+
+        <script>
+            function toggleForm(formId) {
+                var signinForm = document.getElementById('signin-form');
+                var signupForm = document.getElementById('signup-form');
+
+                if (formId === 'signin-form') {
+                    signinForm.style.display = 'block';
+                    signupForm.style.display = 'none';
+                } else if (formId === 'signup-form') {
+                    signinForm.style.display = 'none';
+                    signupForm.style.display = 'block';
+                }
+            }
+        </script>
+    </body>
+</html>
